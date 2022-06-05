@@ -3,6 +3,9 @@ import { ThemeProvider } from "atomize";
 import Login from "./components/Login";
 
 const theme = {
+  fontFamily: {
+    primary: "OpenSans", 
+  },
   colors: {
     brand100: "#111a2f",
     brand200: "#0d456b",
