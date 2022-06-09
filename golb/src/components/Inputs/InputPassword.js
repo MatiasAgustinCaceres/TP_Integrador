@@ -2,13 +2,16 @@
 import { Input, Button, Icon } from "atomize";
 import React, { useState } from "react";
 
-export default function InputPassword() {  
+export default function InputPassword({placeholder,func, inputName}) {  
     const [showPassword, setShowPassword]=useState(false);
   
     return (
     <Input
         m={{t: "0.8rem"}}
-        placeholder="Password"
+        placeholder={placeholder}
+        id={inputName}
+        name={inputName}
+        onChange={func}
         type={showPassword ? "text" : "password"}
         suffix={
         <Button
