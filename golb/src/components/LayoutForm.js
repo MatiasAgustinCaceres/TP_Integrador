@@ -7,7 +7,7 @@ TODO
 Ver si es posible definir de forma dinamica un json
 */
 
-export default function LayoutForm({ layoutForm ,title, subtitle, inputs, background, buttons, userData }) {
+export default function LayoutForm({ layoutForm ,title, subtitle, inputs, background, buttons, userData, color, handlesubmit }) {
 
   let left;
   let right;
@@ -21,7 +21,7 @@ export default function LayoutForm({ layoutForm ,title, subtitle, inputs, backgr
 
   const form = (
   <Col size={{ xs: "12", md: "12", lg: "6" }}>
-    <Form title={title} subtitle={subtitle} inputs={inputs} buttons={buttons} userData={userData} ></Form>
+      <Form title={title} subtitle={subtitle} inputs={inputs} buttons={buttons} userData={userData} color={color} handlesubmit={handlesubmit} type="submit"></Form>
   </Col>
   );
 
@@ -50,7 +50,7 @@ export default function LayoutForm({ layoutForm ,title, subtitle, inputs, backgr
               tag="h1"
               d={{ xs: "none", lg: "block" }}
               p={{ lg: { l: "4rem" } }}
-              textColor="brand400"
+              textColor={color+"400"}
               textSize="display1"
               bg="linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))"
             ></Text>
@@ -78,7 +78,7 @@ export default function LayoutForm({ layoutForm ,title, subtitle, inputs, backgr
       flexDir="column"
       align="center"
       justify={{ md: "center", xs: "center" }}
-      bg="brand100"
+      bg={color+"100"}
       p={{ lg: { l: "2rem" } }}
       rounded={rounded}
     >

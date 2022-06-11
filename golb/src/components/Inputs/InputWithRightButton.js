@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, Icon } from "atomize";
 
-export default function InputWithRightButton({placeholder, icon, func, inputName}) {
+export default function InputWithRightButton({placeholder, icon, func, inputName, iconColor}) {
   return (
     <Input
       placeholder={placeholder}
@@ -13,7 +13,7 @@ export default function InputWithRightButton({placeholder, icon, func, inputName
       prefix={
         <Icon
           name={icon}
-          color="brand300"
+          color={iconColor+"300"}
           size="16px"
           cursor="pointer"
           pos="absolute"

@@ -3,6 +3,11 @@ import { Div } from "atomize";
 import Form from "../components/LayoutForm";
 
 export default function Login() {
+
+  const handleSubmit = () => {
+
+  };
+
   return (
     <Div
       fontFamily="primary"
@@ -16,9 +21,11 @@ export default function Login() {
       w={{ xs: "auto", md: "100vw" }}
     >
       <Form
+        color="brand"
         title="Acceder"
+        handlesubmit={handleSubmit}
         layoutForm="l"
-        subtitle="¿Primera vez? Registrate acá ;)"
+        subtitle={{text: "¿Nuevo? Comenzá por acá ;)", link: "/register"}}
         inputs={[
           { icon: "UserSolid", placeholder: "Nombre de Usuario", inputName:"userName" },
           { icon: "password", placeholder: "Contraseña", inputName:"password" },

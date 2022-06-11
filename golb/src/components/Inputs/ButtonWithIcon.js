@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Icon } from 'atomize';
 
 
-export default function ButtonWithIcon({text}) {
+export default function ButtonWithIcon({text, bg, type}) {
   return (
     <Button
     m={{t: "0.8rem"}}
@@ -16,7 +16,8 @@ export default function ButtonWithIcon({text}) {
     }
     shadow="3"
     hoverShadow="4"
-    bg="brand300"
+    bg={bg}
+    type={type}
     textWeight="500"
   >
     {text}
