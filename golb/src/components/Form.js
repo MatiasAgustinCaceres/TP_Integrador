@@ -14,8 +14,7 @@ export default function Form({ title, subtitle, inputs, userData, color, handles
   };
 
   return (
-    <form onSubmit={handlesubmit}>
-      <Row d="flex" align="center" justify="center" h="100%" w="100%">
+    <Row d="flex" align="center" justify="center" h="100%" w="100%">
         <Col size="12" d="flex" justify="center" m={{ b: "2rem" }}>
           <Image h="4rem" w="auto" src="./pix/golb.png" />
         </Col>
@@ -69,6 +68,5 @@ export default function Form({ title, subtitle, inputs, userData, color, handles
           </Div>
         </Col>
       </Row>
-    </form>
   );
 }

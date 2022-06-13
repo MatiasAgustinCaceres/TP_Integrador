@@ -29,9 +29,8 @@ export default function Register() {
       title="Registro"
       subtitle={{text: "Si ya tenés cuenta venite por acá :)", link:"/login"}}
       inputs={[
-        { icon: "User", placeholder: "Nombre de Usuario" },
         { icon: "Email", placeholder: "Email" },
-        { icon: "UserSolid", placeholder: "Nombre Completo" },
+        { icon: "Email", placeholder: "Confirma tu Email" },
         { icon: "password", placeholder: "Contraseña"},
         { icon: "password", placeholder: "Confirma tu Contraseña"}
       ]}

@@ -73,6 +73,7 @@ export default function LayoutForm({ layoutForm ,title, subtitle, inputs, backgr
       w={{ xs: "100%", lg: "80%", md: "60%" }}
       minW="3rem"
       maxW="950px"
+      minH="550px"
       h={{ xs: "100%", md: "60%" }}
       d="flex"
       flexDir="column"
