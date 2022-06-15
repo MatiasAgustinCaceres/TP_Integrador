@@ -1,4 +1,3 @@
-import "./App.css";
 import { ThemeProvider } from "atomize";
 import { Route, Routes } from "react-router-dom";
 
