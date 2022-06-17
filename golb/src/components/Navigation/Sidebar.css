@@ -17,7 +17,7 @@
   z-index: 99;
   transition: all 0.5s ease;
 }
-.sidebar.open{
+.open{
   width: 250px;
 }
 .sidebar .logo-details{
@@ -53,6 +53,20 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
+
+.sidebar .logo-details img{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
 .sidebar.open .logo-details #btn{
   text-align: right;
 }
