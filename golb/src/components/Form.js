@@ -5,12 +5,16 @@ import InputWithRightButton from "./Inputs/InputWithRightButton";
 import InputPassword from "./Inputs/InputPassword";
 import ButtonWithIcon from "./Inputs/ButtonWithIcon";
 
-export default function Form({ title, subtitle, inputs, userData, color, handlesubmit }) {
+export default function Form({ title, subtitle, inputs, userData, color, actionName, action }) {
   const [user, setUser] = useState(userData);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    action(user);
+  }
 
   const changeHandler = ({ target: { name, value } }) => {
     setUser({ ...user, [name]: value });
-    console.log(user);
   };
 
   return (
@@ -28,6 +32,7 @@ export default function Form({ title, subtitle, inputs, userData, color, handles
         </Col>
         <Col size="12" h="100%">
           <Div m={{ xs: "", md: { t: "3rem" } }} p="1rem">
+            <form onSubmit={handleSubmit}>
             {inputs.map((obj, i) => {
               if (obj.icon === "password")
                 return (
@@ -43,6 +48,7 @@ export default function Form({ title, subtitle, inputs, userData, color, handles
                   iconColor={color}
                   placeholder={obj.placeholder}
                   icon={obj.icon}
+                  type={obj.type}
                   key={i}
                   func={changeHandler}
                   inputName={obj.inputName}
@@ -52,10 +58,11 @@ export default function Form({ title, subtitle, inputs, userData, color, handles
 
             <Div d="flex" justify="center">
               <ButtonWithIcon
-                text="Registrarse"
-                bg={color + "500"}
+                text={actionName}
+                bg={color + "300"}
               ></ButtonWithIcon>
             </Div>
+            </form>
             <Div
               d="flex"
               justify="center"

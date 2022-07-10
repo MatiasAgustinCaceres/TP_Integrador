@@ -1,6 +1,6 @@
 const theme = {
     fontFamily: {
-      primary: "OpenSans",
+      primary: "Poppins"
     },
     colors: {
       brand100: "#111a2f",

@@ -11,7 +11,7 @@ export default function Sidebar() {
 
     <div className={isOpen ? "sidebar open" : "sidebar "}>
       <div className="logo-details">
-        <div className="logo_name">Let's Golb</div>
+        <div className="logo_name">Golb</div>
         <Image src="./pix/golb.png" h="30px" w="auto" onClick={() => setIsOpen(!isOpen)}></Image>
 
       </div>

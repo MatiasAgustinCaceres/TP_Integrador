@@ -7,7 +7,7 @@ TODO
 Ver si es posible definir de forma dinamica un json
 */
 
-export default function LayoutForm({ layoutForm ,title, subtitle, inputs, background, buttons, userData, color, handlesubmit }) {
+export default function LayoutForm({ layoutForm ,title, subtitle, inputs, background, buttons, userData, color, handleSubmit, actionName, action }) {
 
   let left;
   let right;
@@ -21,7 +21,7 @@ export default function LayoutForm({ layoutForm ,title, subtitle, inputs, backgr
 
   const form = (
   <Col size={{ xs: "12", md: "12", lg: "6" }}>
-      <Form title={title} subtitle={subtitle} inputs={inputs} buttons={buttons} userData={userData} color={color} handlesubmit={handlesubmit} type="submit"></Form>
+      <Form action = {action} actionName={actionName} title={title} subtitle={subtitle} inputs={inputs} buttons={buttons} userData={userData} color={color} type="submit"></Form>
   </Col>
   );
 

@@ -1,10 +1,12 @@
 import React from "react";
 import { Input, Icon } from "atomize";
 
-export default function InputWithRightButton({placeholder, icon, func, inputName, iconColor}) {
+export default function InputWithRightButton({placeholder, icon, func, inputName, iconColor, type}) {
   return (
     <Input
+      required
       placeholder={placeholder}
+      type={type}
       id={inputName}
       name={inputName}
       onChange={func}

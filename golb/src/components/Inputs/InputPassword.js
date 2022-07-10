@@ -7,6 +7,7 @@ export default function InputPassword({placeholder,func, inputName}) {
   
     return (
     <Input
+        required
         m={{t: "0.8rem"}}
         placeholder={placeholder}
         id={inputName}
