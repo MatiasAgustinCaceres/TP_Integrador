@@ -1,40 +1,46 @@
-//import { Col, Container, Image, Row, Text } from 'atomize';
-import { React } from 'react';
-//import { styled } from "styletron-react";
+import { Col, Div, Row, Text } from 'atomize';
+import { React, useState } from 'react';
 import Sidebar from "../components/Navigation/Sidebar";
-//import theme from "../theme";
-
-/*
-
-  const Nav = styled("nav", props => ({
-    padding:"0.2rem",
-    background: theme.colors.brand200,
-    width: "100vw",
-    height: "calc(40px+0.2rem)"
-  }));
-
-    <Nav>
-      <Container>
-        <Row>
-          <Col size="2" h="100%" d="flex" justify="space-between" align="center">
-          <Image h="40px" w="auto" src="./pix/golb.png" />
-            <Text
-              tag="h1"
-              d={{ xs: "none", lg: "block" }}
-              p={{ lg: { l: "4rem" } }}
-              textColor={"brand400"}
-              textSize="display1"
-            >golb</Text>
-          </Col>
-          <Col size="8"></Col>
-        </Row>
-      </Container>
-      <Sidebar></Sidebar>
-    </Nav>
-*/
+import { useAuth } from '../context/authContext';
+import LoadingPage from './LoadingPage';
 
 export default function HomePage() {
+
+  const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
+
+
   return (
-    <Sidebar></Sidebar>
+    <>
+      {<LoadingPage state={loading} ></LoadingPage>}
+      <Sidebar setLoading={setLoading}></Sidebar>
+      <Div
+        bg="secundary500"
+        minH="400px"
+        m={{ l: "78px" }}
+        p="1rem"
+      >
+        <Row>
+          <Col size="12">
+            <Div p="1rem">
+              <Text textColor="white" textAlign="left" textSize="display1">
+                Es bueno tenerte de vuelta 
+                <i style={{color: "white", marginLeft: "1rem"}} class='bx bxs-heart md'></i>
+              </Text>
+            </Div>
+          </Col>
+          <Col size="7">
+            <Div p="1rem" bg="warning500">
+              This is 7 of 12
+            </Div>
+          </Col>
+        </Row>
+      </Div>
+      {
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000)
+      }
+    </>
   )
 }

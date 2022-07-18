@@ -5,18 +5,18 @@ import Login from "./pages/Login";
 import { AuthProvider } from "./context/authContext";
 import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import LoadingPage from "./pages/LoadingPage";
 
 /*TODO:
   Llevar al index.js la configuracion de la paleta de colores
 */
 
-
-
 function App(props) {
 
   const theme = {
     fontFamily: {
-      primary: "Poppins , sans-serif"
+      primary: "'Poppins' , sans-serif"
     },
     colors: {
       brand100: "#111a2f",
@@ -30,6 +30,9 @@ function App(props) {
       secundary400:"#ff9800",
       secundary500:"#ec8800",
     },
+    transition: {
+      custom: "transform 500ms cubic-bezier(1.000, 0.020, 0.000, 0.995)"
+    }
   };
 
   return (
@@ -38,7 +41,12 @@ function App(props) {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<HomePage/>}/>
+          <Route path="/load" element={<LoadingPage />} />
+          <Route path="/" element={
+            <ProtectedRoutes>
+              <HomePage/>
+            </ProtectedRoutes>
+          }/>
         </Routes>
       </AuthProvider>
     </ThemeProvider>

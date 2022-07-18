@@ -4,7 +4,7 @@ import "./Sidebar.css";
 import NavListItem from "./NavListItem"
 import ProfileCard from './ProfileCard';
 
-export default function Sidebar() {
+export default function Sidebar({setLoading}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,13 +18,13 @@ export default function Sidebar() {
       <ul className="nav-list">
         <li>
           <i className="bx bx-search" />
-          <input type="text" placeholder="Search..." />
-          <span className="tooltip">Search</span>
+          <input type="text" placeholder="Buscar..." />
+          <span className="tooltip">Búsqueda</span>
         </li>
         
-        <NavListItem name="Dashboard" icon="bx bx-grid-alt" link="/"></NavListItem>
+        <NavListItem name="Inicio" icon="bx bx-grid-alt" link="/"></NavListItem>
 
-        <ProfileCard></ProfileCard>
+        <ProfileCard setLoading={setLoading}></ProfileCard>
       </ul>
     </div>
 

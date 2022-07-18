@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Register() {
 
-  const { signup } = useAuth();
-  
+  const { signup, user } = useAuth();
+
   const [error, setError] = useState();
   const [errorAlert, setErrorAlert] = useState(false);
 
@@ -22,6 +22,8 @@ export default function Register() {
       setErrorAlert(true);
     }
   };
+
+  if (user) navigate("/");
 
   return (
     <Div
@@ -58,8 +60,8 @@ export default function Register() {
         title="Registro"
         subtitle={{ text: "Si ya tenés cuenta venite por acá :)", link: "/login" }}
         inputs={[
-          { icon: "Email", placeholder: "Email", inputName: "email" , type: "email"},
-          { icon: "Email", placeholder: "Confirma tu Email", inputName: "emailConfirm" , type: "email"},
+          { icon: "Email", placeholder: "Email", inputName: "email", type: "email" },
+          { icon: "Email", placeholder: "Confirma tu Email", inputName: "emailConfirm", type: "email" },
           { icon: "password", placeholder: "Contraseña", inputName: "password" },
           { icon: "password", placeholder: "Confirma tu Contraseña", inputName: "passwordConfirm" }
         ]}
