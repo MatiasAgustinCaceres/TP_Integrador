@@ -7,7 +7,6 @@ export default function LoadingPage({state}) {
     <Div
     bg="white"
     pos="absolute"
-    left="-100vw"
     h="100vh"
     w="100vw"
     d="flex"
@@ -15,14 +14,18 @@ export default function LoadingPage({state}) {
     align="center"
     transition="custom"
     style={{
+        top: "0",
+        left:"-105vw",
         transform: state
           ? "translateX(100vw)"
           : "translateX(0)"
-      ,
-      zIndex:"100"
+        ,
+        overflow: "hidden"
+        ,
+        zIndex:"100"
     }}
     >
-        <Icon name="Loading" color="#07c8ff" size="100px" />
+        <Icon name="Loading" color="#07c8ff" size="100px" style={{transform: "translateX(5vw)"}}/>
     </Div>
     )
 }

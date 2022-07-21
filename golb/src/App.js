@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 import Register from "./pages/Register";
 import ProtectedRoutes from "./components/ProtectedRoutes";
 import LoadingPage from "./pages/LoadingPage";
+import PostCard from "./components/PostCard";
+import CreatePost from "./pages/CreatePost";
 
 /*TODO:
   Llevar al index.js la configuracion de la paleta de colores
@@ -42,6 +44,8 @@ function App(props) {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/load" element={<LoadingPage />} />
+          <Route path="/post" element={<PostCard />} />
+          <Route path="/create-post" element={<CreatePost />} />
           <Route path="/" element={
             <ProtectedRoutes>
               <HomePage/>

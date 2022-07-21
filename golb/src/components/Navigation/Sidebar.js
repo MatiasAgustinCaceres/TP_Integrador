@@ -23,6 +23,7 @@ export default function Sidebar({setLoading}) {
         </li>
         
         <NavListItem name="Inicio" icon="bx bx-grid-alt" link="/"></NavListItem>
+        <NavListItem name="Crear post" icon="bx bxs-plus-circle" link="/"></NavListItem>
 
         <ProfileCard setLoading={setLoading}></ProfileCard>
       </ul>
