@@ -45,7 +45,11 @@ function App(props) {
           <Route path="/register" element={<Register />} />
           <Route path="/load" element={<LoadingPage />} />
           <Route path="/post" element={<PostCard />} />
-          <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/create-post" element={
+            <ProtectedRoutes>
+              <CreatePost />
+            </ProtectedRoutes>
+          } />
           <Route path="/" element={
             <ProtectedRoutes>
               <HomePage/>

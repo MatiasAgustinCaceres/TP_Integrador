@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function NavListItem({name, icon, link}) {
     return (
         <li>
-            <a href={link}>
+            <NavLink to={link}>
                 <i className={icon} />
                 <span className="links_name">{name}</span>
-            </a>
+            </NavLink>
             <span className="tooltip">{name}</span>
         </li>
     )

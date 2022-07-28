@@ -29,8 +29,6 @@ export default function Login() {
     }
   };
 
-  if (user) navigate("/")
-
   return (
     <Div
       d="flex"
